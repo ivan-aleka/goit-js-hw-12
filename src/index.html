@@ -4,20 +4,38 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>goit-js-hw-11</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
-
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
-
-    <load src="./partials/footer.html" />
-
-    <script type="module" src="./main.js"></script>
+    <div class="container">
+      <form class="search-form js-search-form">
+        <input
+          class="search-input js-search-input"
+          type="text"
+          name="user_query"
+          required
+          placeholder="Search images..."
+        />
+        <button class="search-btn" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="loader" style="display: none">
+      Loading images, please wait...
+    </div>
+    <div class="gallery"></div>
+    <button class="load-more" type="submit" style="display: none">
+      Load more
+    </button>
+    <div class="loader" style="display: none">
+      Loading images, please wait...
+    </div>
+    <script type="module" src="./main.js" defer></script>
   </body>
 </html>
