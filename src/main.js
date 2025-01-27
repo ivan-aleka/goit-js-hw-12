@@ -105,6 +105,16 @@ const handleLoadMore = async () => {
     const data = await fetchImages(currentQuery, currentPage);
     renderGallery(data.hits);
 
+    const galleryItems = document.querySelectorAll('.photo-card');
+    if (galleryItems.length > 0) {
+      const cardHeight = galleryItems[0].getBoundingClientRect().height;
+
+      window.scrollBy({
+        top: cardHeight * 2,
+        behavior: 'smooth',
+      });
+    }
+
     if (currentPage * 15 >= data.totalHits) {
       hideLoadMoreButton();
       iziToast.info({
